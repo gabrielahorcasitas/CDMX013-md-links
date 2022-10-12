@@ -3,5 +3,9 @@
   "version": "0.1.0",
   "engines": {
     "node": ">=16.x"
+  },
+  "dependencies": {
+    "async": "^3.2.4",
+    "bl": "^5.0.0"
   }
 }
