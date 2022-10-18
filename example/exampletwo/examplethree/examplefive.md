@@ -1,4 +1,6 @@
-### FAQs
+<!-- ### FAQs
+
+
 
 #### ¿Cómo hago para que mi módulo sea _instalable_ desde GitHub?
 
@@ -10,7 +12,7 @@ Para que el módulo sea instalable desde GitHub solo tiene que:
 Con el comando `npm install githubname/reponame` podemos instalar directamente
 desde GitHub. Ver [docs oficiales de `npm install` acá](https://docs.npmjs.com/cli/install).
 
-Por ejemplo, el [`course-parser`](https://github.com/Laboratoria/course-parser)
+<!-- Por ejemplo, el [`course-parser`](https://github.com/Laboratoria/course-parser)
 que usamos para la currícula no está publicado en el registro público de NPM,
 así que lo instalamos directamente desde GitHub con el comando `npm install
 Laboratoria/course-parser`.
@@ -66,4 +68,6 @@ si tienes dudas existenciales con respecto a estas decisiones. No existe una
 * [Leer un archivo](https://nodejs.org/api/fs.html#fs_fs_readfile_path_options_callback)
 * [Leer un directorio](https://nodejs.org/api/fs.html#fs_fs_readdir_path_options_callback)
 * [Path](https://nodejs.org/api/path.html)
-* [Linea de comando CLI](https://medium.com/netscape/a-guide-to-create-a-nodejs-command-line-package-c2166ad0452e)
+* [Linea de comando CLI](https://medium.com/netscape/a-guide-to-create-a-nodejs-command-line-package-c2166ad0452e) --> -->
+
+[Google](http://google.com/)
