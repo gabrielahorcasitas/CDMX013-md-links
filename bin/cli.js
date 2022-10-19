@@ -4,7 +4,7 @@ const yargs = require('yargs/yargs');
 const fs = require('fs');
 const mdLinks = require('../lib/index');
 
-const { argv } = yargs
+yargs
 .scriptName('mdLinks')
 .usage('path --validate --stats (--validate and --stats are optional)')
 .example('file.md --validate --stats')
@@ -25,9 +25,11 @@ const { argv } = yargs
 })
 .epilogue('Library mdLinks by Gabriela Horcasitas');
 
-const path = argv._[0]; //Arguments without a corresponding flag show up in the argv._ array.
-const validate = argv.validate;
-const stats = argv.stats;
+console.log(yargs)
+
+const path = yargs._[0]; //Arguments without a corresponding flag show up in the argv._ array.
+const validate = yargs.validate;
+const stats = yargs.stats;
 
 if(path === undefined){
     console.log('You need to provide a path');
