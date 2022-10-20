@@ -14,11 +14,14 @@
     "yargs": "^17.6.0"
   },
   "description": "Library for extraction and validation of links in markdown files",
-  "main": "index.js",
+  "main": "./bin/cli.js",
   "directories": {
     "example": "example",
     "lib": "lib",
     "test": "test"
+  },
+  "bin": {
+    "mdLinks": "./bin/cli.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
