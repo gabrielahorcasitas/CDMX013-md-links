@@ -24,7 +24,7 @@
     "mdLinks": "./bin/cli.js"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -41,5 +41,8 @@
   "bugs": {
     "url": "https://github.com/gabrielahorcasitas/CDMX013-md-links/issues"
   },
-  "homepage": "https://github.com/gabrielahorcasitas/CDMX013-md-links#readme"
+  "homepage": "https://github.com/gabrielahorcasitas/CDMX013-md-links#readme",
+  "devDependencies": {
+    "jest": "^29.2.1"
+  }
 }
