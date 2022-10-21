@@ -1,14 +1,16 @@
 #!/usr/bin/env node
-const yargs = require('yargs/yargs');
-//const chalk = require('chalk');
 const fs = require('fs');
+const yargs = require('yargs/yargs');
+const colors = require('colors');
 const mdLinks = require('../lib/index');
+const uniqueLinks = require('../lib/unique-links-stats');
+const brokenLinks = require('../lib/broken-links-stats');
 
-const  { argv } = yargs(process.argv.slice(2))
+const { argv } = yargs(process.argv.slice(2))
 .scriptName('mdLinks')
-.usage('path --validate --stats (--validate and --stats are optional)')
-.example('file.md --validate --stats')
-.help('help', 'h')
+.usage('path --validate --stats (--validate and --stats are optional)'.cyan)
+.example('file.md --validate --stats'.magenta)
+.help('help', 'h'.cyan)
 .option('validate',{
     alias: 'v',
     describe: 'validate links',
@@ -22,35 +24,47 @@ const  { argv } = yargs(process.argv.slice(2))
     demandOption: false,
     default: false,
     type: 'boolean'
-});
+})
+.epilog('By Gabriela C. Horcasitas'.cyan)
 
 const path = argv._[0]; //Arguments without a corresponding flag show up in the argv._ array.
 const validate = argv.validate;
 const stats = argv.stats;
 
 if(path === undefined){
-    console.log('You need to provide a path');
-} else if(!fs.existsSync(path)){
-    console.log('Path invalid, try with another path')
+    console.log('You need to provide a path'.red);
+} else if(fs.existsSync(path) === false){
+    console.log('Path invalid, try with another path'.red)
 } else {
     mdLinks(path)
     // when promises in md links
         .then((result) => {
             if (result.length === 0) {
-              console.log('There are no links in this file');
+              console.log('There are no links in this file'.cyan);
             } else if (validate === false && stats === false) { 
-              console.log('Links found in file(s):\n'); // \n new line
+              console.log('Links found in file(s):\n'.cyan); // \n new line
               result.forEach((link) => {
-                console.log(`${'File path:'}${link.path}\n${'href:'} ${link.href}\n${'text:'} ${link.text}\n`);
+                console.log(`${'File path:'.green}${link.path}\n${'href:'.green} ${link.href}\n${'text:'.green} ${link.text}\n`);
               });
             } else if (validate === true && stats === false) {
-              console.log('Links found in file(s):\n');
+              console.log('Links found in file(s):\n'.cyan);
               result.forEach((link) => {
-                console.log(`${'href:'} ${link.href}\n${'status:'} ${link.status} ${link.statusText}\n${'text:'} ${link.text}\n`);
+                console.log(`${'href:'.green} ${link.href}\n${'status:'.green} ${link.status} ${link.statusText}\n${'text:'.green} ${link.text}\n`);
               });
+            } else if (validate === false && stats === true){
+              console.log('Links found in file(s):\n'.cyan);
+              const unique = uniqueLinks(result);
+              console.log(`${'Total:'.green} ${result.length}\n${'Unique:'.green} ${unique}`)
+            } else if (validate === true && stats === false){
+              console.log('Links found in file(s):\n'.cyan)
+              const unique = uniqueLinks(result);
+              const broken = brokenLinks(result);
+              broken.then((response) => {
+                console.log(`${'Total:'.green} ${result.length}\n${'Unique:'.green} ${unique}\n${'Broken:'.yellow} ${response}`)
+              });  
             }
          })
-         .catch((err) => {
-            console.log(err);
+         .catch((error) => {
+            console.log(`${'Error'.red} Error ${error.message}`);
          });
 };
