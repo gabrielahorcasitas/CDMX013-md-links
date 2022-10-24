@@ -5,6 +5,7 @@ const colors = require('colors');
 const mdLinks = require('../lib/mdLinks');
 const uniqueLinks = require('../lib/unique-links-stats');
 const brokenLinks = require('../lib/broken-links-stats');
+const { resolve } = require('path');
 
 
 const { argv } = yargs(process.argv.slice(2))
@@ -42,27 +43,28 @@ if(path === undefined){
         .then((result) => {
             if (result.length === 0) {
               console.log('There are no links in this file'.cyan);
-            } else if (validate === false && stats === false) { 
+            } else if (!validate && !stats) { 
               console.log('\nLinks found in file(s):\n'.cyan); // \n new line
               result.forEach((link) => {
                 console.log(`${'File path:'.green}${link.path}\n${'href:'.green} ${link.href}\n${'text:'.green} ${link.text}\n`);
               });
-            } else if (validate === true && stats === false) {
+            } else if (validate  && !stats) {
+              console.log('only validate');
               console.log('\nLinks found in file(s):\n'.cyan);
               result.forEach((link) => {
                 console.log(`${'href:'.green} ${link.href}\n${'status:'.green} ${link.status} ${link.statusText}\n${'text:'.green} ${link.text}\n`);
               });
-            } else if (validate === false && stats === true){
+            } else if (!validate && stats){
               console.log('\nLinks found in file(s):\n'.cyan);
-              const nonRepeated = uniqueLinks(result);
-              console.log(`${'Total:'.green} ${result.length}\n${'Unique:'.green} ${nonRepeated}`)
-            } else if (validate === true && stats === false){
+              const nonRepeated = uniqueLinks(result);            
+              console.log(`${'Total:'.green} ${result.length}\n${'Unique:'.green} ${nonRepeated}`);
+            } else if (validate === true && stats === true){
               console.log('\nLinks found in file(s):\n'.cyan)
               const nonRepeated = uniqueLinks(result);
               const broken = brokenLinks(result);
-              broken.then((response) => {
-                console.log(`${'Total:'.green} ${result.length}\n${'Unique:'.green} ${nonRepeated}\n${'Broken:'.magenta} ${response}`)
-              });  
+             // broken.then((response) => {
+                console.log(`${'Total:'.green} ${result.length}\n${'Unique:'.green} ${nonRepeated}\n${'Broken:'.magenta} ${broken}`)
+            //  });  
             }
          })
          .catch((error) => {
