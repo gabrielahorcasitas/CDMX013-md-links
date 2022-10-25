@@ -4,7 +4,7 @@ const yargs = require('yargs/yargs');
 const colors = require('colors');
 const mdLinks = require('../lib/mdLinks');
 const uniqueLinks = require('../lib/unique-links-stats');
-const brokenLinks = require('../lib/broken-links-stats');
+const linkStats = require('../lib/links-stats');
 const { resolve } = require('path');
 
 
@@ -60,11 +60,7 @@ if(path === undefined){
               console.log(`${'Total:'.green} ${result.length}\n${'Unique:'.green} ${nonRepeated}`);
             } else if (validate === true && stats === true){
               console.log('\nLinks found in file(s):\n'.cyan)
-              //const nonRepeated = uniqueLinks(result);
-              const broken = brokenLinks(result);
-             // broken.then((response) => {
-                //console.log(`${'Total:'.green} ${result.length}\n${'Unique:'.green} ${nonRepeated}\n${'Broken:'.magenta} ${broken}`)
-           // });  
+              const broken = linkStats(result);
             }
          })
          .catch((error) => {
