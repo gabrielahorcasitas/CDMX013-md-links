@@ -60,11 +60,11 @@ if(path === undefined){
               console.log(`${'Total:'.green} ${result.length}\n${'Unique:'.green} ${nonRepeated}`);
             } else if (validate === true && stats === true){
               console.log('\nLinks found in file(s):\n'.cyan)
-              const nonRepeated = uniqueLinks(result);
+              //const nonRepeated = uniqueLinks(result);
               const broken = brokenLinks(result);
              // broken.then((response) => {
-                console.log(`${'Total:'.green} ${result.length}\n${'Unique:'.green} ${nonRepeated}\n${'Broken:'.magenta} ${broken}`)
-            //  });  
+                //console.log(`${'Total:'.green} ${result.length}\n${'Unique:'.green} ${nonRepeated}\n${'Broken:'.magenta} ${broken}`)
+           // });  
             }
          })
          .catch((error) => {
