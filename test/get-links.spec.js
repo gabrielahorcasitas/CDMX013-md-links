@@ -1,6 +1,9 @@
+const { default: axios } = require('axios');
 const getLinks = require('../lib/get-links');
+/*no hace falta hacer un mock de marked ni cheerio ya que están 
+importadas de forma implícita en mi función getLinks*/
+jest.mock("axios");
 
-//suma 3 + 4 = 7 == 7
 describe('test get links spec',()=>{
     const files = ['/home/gabri/CDMX013-md-links/example/exampletwo/examplefour.md']
     const linksExpect =  [
@@ -20,9 +23,9 @@ describe('test get links spec',()=>{
           text: 'course-parser'
         }
       ];
-    test('prueba',()=>{
+
+    test('Should return an array of objects for each link data(path, href and text)',()=>{
         const links = getLinks(files)
-        console.log(links)
         expect(links).toEqual(linksExpect)
     });
 });
