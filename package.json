@@ -25,7 +25,7 @@
     "mdLinks": "./bin/cli.js"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest  --verbose --coverage"
   },
   "repository": {
     "type": "git",

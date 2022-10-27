@@ -21,6 +21,11 @@ describe('test get links spec',()=>{
           path: '/home/gabri/CDMX013-md-links/example/exampletwo/examplefour.md',
           href: 'https://github.com/Laboratoria/course-parsr',
           text: 'course-parser'
+        },
+        {
+          path: '/home/gabri/CDMX013-md-links/example/exampletwo/examplefour.md',
+          href: 'https://dev.to/khaosdoctor/the-complete-guide-to-status-codes-for-meaningful-rest-apis-1-5c5',
+          text: 'The Complete Guide to Status Codes for Meaningful '
         }
       ];
 

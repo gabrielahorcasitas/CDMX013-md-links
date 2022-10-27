@@ -16,3 +16,4 @@ así que lo instalamos directamente desde GitHub con el comando `npm install
 Laboratoria/course-parser`.
 
 [`course-parser`](https://github.com/Laboratoria/course-parsr)
+[The Complete Guide to Status Codes for Meaningful ReST APIs - dev.to](https://dev.to/khaosdoctor/the-complete-guide-to-status-codes-for-meaningful-rest-apis-1-5c5)
