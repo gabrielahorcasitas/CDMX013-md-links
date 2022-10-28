@@ -66,7 +66,7 @@ if(fs.existsSync(inputPath) === false){
             } else if (validate === true && stats === true){
               console.log('\nLinks found in file(s):\n'.cyan.bold)
               const nonRepeated = uniqueLinks(result);
-              const broken = brokenLinks(result)
+              brokenLinks(result)
               .then((response) => {
                console.log(`${'Total:'.blue.bold} ${result.length}`,`\n${'Unique:'.blue.bold} ${nonRepeated}`,`\n${'Broken:'.red.bold} ${response}\n`);
               });   
