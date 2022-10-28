@@ -1,4 +1,3 @@
-const { example } = require('yargs');
 const readDir = require('../lib/read-dir');
 
 describe('Recursive function that should enter directory until finding file', () => {

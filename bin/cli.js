@@ -4,7 +4,7 @@ const yargs = require('yargs/yargs');
 const colors = require('colors');
 const mdLinks = require('../lib/mdLinks');
 const uniqueLinks = require('../lib/unique-links-stats');
-const linkStats = require('../lib/links-stats');
+const brokenLinks = require('../lib/broken-links');
 
 const { argv } = yargs(process.argv.slice(2))
 .scriptName('mdLinks')
@@ -65,8 +65,12 @@ if(fs.existsSync(inputPath) === false){
               console.log(`${'Total:'.blue.bold} ${result.length}\n${'Unique:'.blue.bold} ${nonRepeated}\n`);
             } else if (validate === true && stats === true){
               console.log('\nLinks found in file(s):\n'.cyan.bold)
-              const broken = linkStats(result);
-            }
+              const nonRepeated = uniqueLinks(result);
+              const broken = brokenLinks(result)
+              .then((response) => {
+               console.log(`${'Total:'.blue.bold} ${result.length}`,`\n${'Unique:'.blue.bold} ${nonRepeated}`,`\n${'Broken:'.red.bold} ${response}\n`);
+              });   
+            };
          })
          .catch((error) => {
             console.log(`${'Error'.bgRed} ${error.message}`);

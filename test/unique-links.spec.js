@@ -1,12 +1,7 @@
-const { default: axios } = require('axios');
-const getLinks = require('../lib/get-links');
-/*no hace falta hacer un mock de marked ni cheerio ya que están 
-importadas de forma implícita en mi función getLinks*/
-jest.mock("axios");
+const uniqueLinks = require('../lib/unique-links-stats');
 
-describe('test get links spec',()=>{
-    const files = ['/home/gabri/CDMX013-md-links/example/exampletwo/examplefour.md']
-    const linksExpect =  [
+describe('Obtaining non repeated links', () => {
+    const linksOfMd = [
         {
           path: '/home/gabri/CDMX013-md-links/example/exampletwo/examplefour.md',
           href: 'https://docs.npmjs.com/cli/install',
@@ -28,9 +23,9 @@ describe('test get links spec',()=>{
           text: 'The Complete Guide to Status Codes for Meaningful '
         }
       ];
-
-    test('Should return an array of objects for each link data(path, href and text)',()=>{
-        const links = getLinks(files);
-        expect(links).toEqual(linksExpect);
-    });
+      
+      test('Should return the number of unique links in array', () => {
+        const unique = uniqueLinks(linksOfMd);
+        expect(unique).toBe(3);
+      });
 });
