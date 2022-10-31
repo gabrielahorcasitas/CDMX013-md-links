@@ -1,7 +1,7 @@
 const uniqueLinks = require('../lib/unique-links-stats');
 
 describe('Obtaining non repeated links', () => {
-    const linksOfMd = [
+    const linksOfMdOne = [
         {
           path: '/home/gabri/CDMX013-md-links/example/exampletwo/examplefour.md',
           href: 'https://docs.npmjs.com/cli/install',
@@ -23,9 +23,30 @@ describe('Obtaining non repeated links', () => {
           text: 'The Complete Guide to Status Codes for Meaningful '
         }
       ];
+      const linksOfMdTwo = [
+        {
+          path: '/home/gabri/CDMX013-md-links/example/exampletwo/examplefour.md',
+          href: 'https://docs.npmjs.com/cli/install',
+          text: 'docs oficiales de npm install acá'
+        },
+        {
+          path: '/home/gabri/CDMX013-md-links/example/exampletwo/examplefour.md',
+          href: 'https://docs.npmjs.com/cli/install',
+          text: 'docs oficiales de npm install acá'
+        },
+        {
+          path: '/home/gabri/CDMX013-md-links/example/exampletwo/examplefour.md',
+          href: 'https://docs.npmjs.com/cli/install',
+          text: 'docs oficiales de npm install acá'
+        }
+      ];
       
       test('Should return the number of unique links in array', () => {
-        const unique = uniqueLinks(linksOfMd);
+        const unique = uniqueLinks(linksOfMdOne);
         expect(unique).toBe(3);
+      });
+      test('Should return 1 if there are only repeated links in array', () => {
+        const unique = uniqueLinks(linksOfMdTwo);
+        expect(unique).toBe(1);
       });
 });

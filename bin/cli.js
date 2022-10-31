@@ -47,7 +47,7 @@ if(fs.existsSync(inputPath) === false){
             } else if (!validate && !stats) { 
               console.log('\nLinks found in file(s):'.cyan.bold); // \n new line
               result.forEach((link) => {
-                console.log(`\n${'File inputPath:'.blue.bold} ${link.inputPath}\n${'href:'.blue.bold} ${link.href}\n${'text:'.blue.bold} ${link.text}\n`);
+                console.log(`\n${'File inputPath:'.blue.bold} ${link.path}\n${'href:'.blue.bold} ${link.href}\n${'text:'.blue.bold} ${link.text}\n`);
               });
             } else if (validate  && !stats) {
               console.log('\nLinks found in file(s):\n'.cyan.bold);

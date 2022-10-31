@@ -5,7 +5,8 @@ describe('Recursive function that should enter directory until finding file', ()
         const mdFiles = [];
         const examplePath = '/home/gabri/CDMX013-md-links/example/exampletwo/examplethree';
         readDir(examplePath, mdFiles);
-        expect(mdFiles).toEqual(['/home/gabri/CDMX013-md-links/example/exampletwo/examplethree/examplefive.md',
+        expect(mdFiles).toEqual(['/home/gabri/CDMX013-md-links/example/exampletwo/examplethree/examplefive.md', 
+        '/home/gabri/CDMX013-md-links/example/exampletwo/examplethree/exampleseven/exampleeight/examplenine.md',
         '/home/gabri/CDMX013-md-links/example/exampletwo/examplethree/examplesix.md']);
     });
     test('It shouldn\'t return the path of a directory', () => {
