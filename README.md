@@ -32,9 +32,9 @@ el total de links y si estos son válidos, están repetidos o rotos.
 
 Esta API emplea como dependencias: 
 
-* Axios
-* Cheerio
-* Marked
+* [Axios](https://www.npmjs.com/package/axios)
+* [Cheerio](https://www.npmjs.com/package/cheerio)
+* [Marked](https://www.npmjs.com/package/marked)
 
 Para la ejecución de esta libreria, denominada mdLinks, también se creó una
 herramienta de línea de comando (CLI), que acepta por argumentos las 
@@ -42,8 +42,8 @@ opciones de validar y/o obtener estadísticas de los links en cuestión.
 
 Para el CLI se usan las dependencias:
 
-* Colors
-* Yargs
+* [Colors](https://www.npmjs.com/package/colors)
+* [Yargs](https://www.npmjs.com/package/yargs)
 
 ## 3. Planificación
 
@@ -51,7 +51,7 @@ Como punto de partida para el desarrollo de este proyecto, se itero sobre
 un diagrama de flujo que fue creado contemplando los elementos mínimos
 necesarios a cubrir por la API.
 
-[MdLinks Diagrama de Flujo](./images_readme/mdLinks_flowChart.png)
+![MdLinks Diagrama de Flujo](./images_readme/mdLinks_flowChart.png)
 
 ## 4. Implementación
 
@@ -78,23 +78,23 @@ opciones:
 
 ### mdLinks path !options 
 
-[mdLinks only path](./images_readme/mdLinks.png)
+![mdLinks only path](./images_readme/mdLinks.png)
 
 ### mdLinks path --validate
 
-[mdLinks path --validate](./images_readme/mdLinks_v.png)
+![mdLinks path --validate](./images_readme/mdLinks_v.png)
 
 ### mdLinks path --stats
 
-[mdLinks path --stats](./images_readme/mdLinks_s.png)
+![mdLinks path --stats](./images_readme/mdLinks_s.png)
 
 ### mdLinks path --validate --stats
 
-[mdLinks path --validate --stats](./images_readme/mdLinks_v_s.png)
+![mdLinks path --validate --stats](./images_readme/mdLinks_v_s.png)
 
 ### mdLinks --help
 
-[mdLinks --help](./images_readme/mdLinks_h.png)
+![mdLinks --help](./images_readme/mdLinks_h.png)
 
 ## 5. Test Unitarios
 
