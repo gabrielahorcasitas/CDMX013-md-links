@@ -5,8 +5,9 @@
 * [1. Preámbulo](#1-preámbulo)
 * [2. Resumen del proyecto](#2-resumen-del-proyecto)
 * [3. Planificación](#3-planificación)
-* [4. Implementación](#4-implementación)
-* [5. Test Unitarios](#5-test-unitarios)
+* [4. Instalación](#4-instalación)
+* [5. Implementación](#5-implementación)
+* [6. Test Unitarios](#6-test-unitarios)
 
 ***
 
@@ -54,7 +55,11 @@ necesarios a cubrir por la API.
 
 ![MdLinks Diagrama de Flujo](./images_readme/mdLinks_flowChart.png)
 
-## 4. Implementación
+## 4. Instalación
+
+`npm install `
+
+## 5. Implementación
 
 La librería mdLinks se ejecuta y recibe argumentos desde la linea de comando
 (CLI):  _mdLinks_ _path_ _options_
@@ -97,7 +102,7 @@ opciones:
 
 ![mdLinks --help](./images_readme/mdLinks_h.png)
 
-## 5. Test Unitarios
+## 6. Test Unitarios
 
 Con la finalidad de verificar el correcto funcionamientode la API y procurar 
 su optimización, se desarrollaron e implementaron test unitarios 

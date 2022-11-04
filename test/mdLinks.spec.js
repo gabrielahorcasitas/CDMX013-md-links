@@ -156,10 +156,6 @@ describe('Should return (when promise resolved/rejected) info about links in md 
             expect(result).toEqual(linkObjStatus);
         });
     });
-
-    // test('Should return an error message if the library\'s operating conditions are not met', () => {
-    //     return expect(mdLinks('')).rejects.toEqual();
-    // });
 });
 
 

@@ -1,8 +1,4 @@
 const brokenLinks = require('../lib/broken-links');
-/*¿Necesito mockear axios aunque no lo llamo directamente,
-sino que se encuentra implícito en validatelinks?
-No, porque puedo hacer un mock data donde la petición
-HTTP ya está resuelta*/
 
 describe('Obtaining broken links', () => {
     const linkObjStatus = [{

@@ -1,7 +1,6 @@
 const { default: axios } = require('axios');
 const getLinks = require('../lib/get-links');
-/*no hace falta hacer un mock de marked ni cheerio ya que están 
-importadas de forma implícita en mi función getLinks*/
+
 jest.mock("axios");
 
 describe('test get links spec',()=>{

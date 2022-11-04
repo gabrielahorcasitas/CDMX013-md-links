@@ -12,7 +12,7 @@ const { argv } = yargs(process.argv.slice(2))
 .example('file.md --validate --stats'.magenta.bold,'||  dir/file.md --validate --stats'.magenta.bold)
 .version('0.1.0')
 .help('help')
-.strictOptions() // if alias of options start with Mayus: parserConfiguration({ 'strip-aliased': true }) .strictOptions()
+.strictOptions()
 .option('validate',{
     alias: 'v',
     describe: 'Validate links in md file',
@@ -29,7 +29,7 @@ const { argv } = yargs(process.argv.slice(2))
 })
 .epilog('By Gabriela C. Horcasitas'.bgBlue);
 
-const inputPath = argv._[0]; //Arguments without a corresponding flag show up in the argv._ array.
+const inputPath = argv._[0];
 const validate = argv.validate;
 const stats = argv.stats;
 
@@ -45,7 +45,7 @@ if(fs.existsSync(inputPath) === false){
             if(result.length === 0) {
               console.log('No links found'.magenta);
             } else if (!validate && !stats) { 
-              console.log('\nLinks found in file(s):'.cyan.bold); // \n new line
+              console.log('\nLinks found in file(s):'.cyan.bold);
               result.forEach((link) => {
                 console.log(`\n${'File inputPath:'.blue.bold} ${link.path}\n${'href:'.blue.bold} ${link.href}\n${'text:'.blue.bold} ${link.text}\n`);
               });
