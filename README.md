@@ -57,7 +57,7 @@ necesarios a cubrir por la API.
 
 ## 4. Instalación
 
-`npm install `
+`npm i md-links-gchm`
 
 ## 5. Implementación
 
