@@ -24,7 +24,7 @@ la información que se quiere compartir.
 
 ## 2. Resumen del proyecto
 
-Se creó una librería en JavaScript que lee archivos en formato `Markdown`,
+Se creó una librería en JavaScript que lee archivos en formato Markdown,
 a partir de lo cual puede verificar, meditante peticiones HTTP, 
 los links contenidos en estos archivos y repotar 
 información relevante acerca de los mismos, por ejemplo, 
@@ -48,7 +48,8 @@ Para el CLI se usan las dependencias:
 ## 3. Planificación
 
 Como punto de partida para el desarrollo de este proyecto, se itero sobre
-un diagrama de flujo que fue creado contemplando los elementos mínimos
+un [diagrama de flujo](https://whimsical.com/mdlinks-flowchart-GTqMzobjxnmCcLD28m5SHQ)
+ que fue creado contemplando los elementos mínimos
 necesarios a cubrir por la API.
 
 ![MdLinks Diagrama de Flujo](./images_readme/mdLinks_flowChart.png)
@@ -58,8 +59,8 @@ necesarios a cubrir por la API.
 La librería mdLinks se ejecuta y recibe argumentos desde la linea de comando
 (CLI):  _mdLinks_ _path_ _options_
 
-El argumento path hace referencia a la ruta del archivo markdown o directorio 
-que contiene archivos markdown, _este argumento es obligatorio._
+El argumento path hace referencia a la ruta del _archivo markdown_ o 
+_directorio que contiene archivos markdown_, _este argumento es obligatorio._ 
 
 Mientras que options hace referencia, como su nombre lo
 indica, a los argumentos opcionales de validación y/o estadísticas de 
@@ -102,4 +103,4 @@ Con la finalidad de verificar el correcto funcionamientode la API y procurar
 su optimización, se desarrollaron e implementaron test unitarios 
 de las diferentes funciones que componen a la librería.
 
-[mdLinks test unitarios](./images_readme/mdLinks_tests.png)
+![mdLinks test unitarios](./images_readme/mdLinks_tests.png)
