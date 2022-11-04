@@ -64,7 +64,7 @@ describe('Should return object that includes HTTP status for each link', () => {
             path: '/home/gabri/CDMX013-md-links/example/exampleone.md',
             href: 'http://community.laboratoria.la/c/js',
             text: 'foro de la comunidad',
-            status: 'Error undefined',
+            status: 'Error undefined', // with the mockImp... spy, the mock function will return undefined when invoked
             statusText: 'fail'
         };
         const linkObjTwoStatus = {
@@ -80,6 +80,6 @@ describe('Should return object that includes HTTP status for each link', () => {
             expect(axios.get).toHaveBeenCalledTimes(3);
             expect(axios.get).toHaveBeenCalledWith(linkTwo);
 
-        })
+        });
     });
 });
