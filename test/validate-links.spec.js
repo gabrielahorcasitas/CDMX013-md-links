@@ -17,8 +17,8 @@ describe('Should return object that includes HTTP status for each link', () => {
             status: 200,
             statusText: 'ok'
         };
-        axios.get.mockImplementation(() => Promise.resolve(linkObjStatus));// or axios.get.mockResolvedValue(linkObjStatus)
-        return validateLinks(linkObj).then((result) => {//validate links returns a pending promise .then for resolve it
+        axios.get.mockImplementation(() => Promise.resolve(linkObjStatus));
+        return validateLinks(linkObj).then((result) => {
             expect(result).toEqual(linkObjStatus);
             expect(axios.get).toHaveBeenCalledTimes(1);
             expect(axios.get).toHaveBeenCalledWith(link);
@@ -39,7 +39,7 @@ describe('Should return object that includes HTTP status for each link', () => {
             status: 404,
             statusText: 'fail'
         };
-        axios.get.mockImplementation(() => Promise.reject({response : {status : 404}})); //catch error.response of axios request
+        axios.get.mockImplementation(() => Promise.reject({response : {status : 404}}));
         return validateLinks(linkObj).then((result) => {
             expect(result).toEqual(linkObjStatus);
             expect(axios.get).toHaveBeenCalledTimes(2);
@@ -64,7 +64,7 @@ describe('Should return object that includes HTTP status for each link', () => {
             path: '/home/gabri/CDMX013-md-links/example/exampleone.md',
             href: 'http://community.laboratoria.la/c/js',
             text: 'foro de la comunidad',
-            status: 'Error undefined', // with the mockImp... spy, the mock function will return undefined when invoked
+            status: 'Error undefined',
             statusText: 'fail'
         };
         const linkObjTwoStatus = {
