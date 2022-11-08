@@ -1,6 +1,6 @@
 {
   "name": "md-links-gchm",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "author": "Gabriela C. Horcasitas <gchorcasitas@gmail.com>",
   "engines": {
     "node": ">=16.x"
