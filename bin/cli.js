@@ -34,10 +34,10 @@ const validate = argv.validate;
 const stats = argv.stats;
 
 if(inputPath === undefined){
-    console.log('You need to provide a inputPath'.bgRed);
+    console.log('You need to provide a path'.bgRed);
 } else 
 if(fs.existsSync(inputPath) === false){
-    console.log('Path invalid, try with another Path'.bgRed);
+    console.log('Path invalid, try with another path'.bgRed);
 } else {
     mdLinks(inputPath, validate, stats)
     // when promises in md links
