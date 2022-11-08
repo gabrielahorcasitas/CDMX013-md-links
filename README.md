@@ -57,7 +57,13 @@ necesarios a cubrir por la API.
 
 ## 4. Instalación
 
-`npm i md-links-gchm`
+`npm i md-links-gchm` y configura un alias para la ejecución del cli
+
+o bien   
+
+`npm i -D md-links-gchm` y después ejecuta con  `npx mdlinks [options]`
+
+Mientras que para importar el módulo con CommonJS Modules usa `require/module.exports`.
 
 ## 5. Implementación
 
