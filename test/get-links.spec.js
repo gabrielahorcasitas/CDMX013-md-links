@@ -1,7 +1,4 @@
-const { default: axios } = require('axios');
 const getLinks = require('../lib/get-links');
-
-jest.mock("axios");
 
 describe('test get links spec',()=>{
     const files = ['/home/gabri/CDMX013-md-links/example/exampletwo/examplefour.md']

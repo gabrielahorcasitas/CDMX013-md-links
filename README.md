@@ -2,91 +2,89 @@
 
 ## Índice
 
-* [1. Preámbulo](#1-preámbulo)
-* [2. Resumen del proyecto](#2-resumen-del-proyecto)
-* [3. Planificación](#3-planificación)
-* [4. Instalación](#4-instalación)
-* [5. Implementación](#5-implementación)
-* [6. Test Unitarios](#6-test-unitarios)
+* [1. Preamble](#1-preamble)
+* [2. Project Summary](#2-project-summary)
+* [3. Planning](#3-planning)
+* [4. Installation](#4-installation)
+* [5. User Manual](#5-user-manual)
+* [6. Unit Tests](#6-unit-tests)
 
 ***
 
-## 1. Preámbulo
+## 1. Preamble
 
-[Markdown](https://es.wikipedia.org/wiki/Markdown) es un lenguaje de marcado
-ligero muy popular entre developers. Es usado en muchísimas plataformas que
-manejan texto plano (GitHub, foros, blogs, ...) y es muy común
-encontrar varios archivos en ese formato en cualquier tipo de repositorio
-(empezando por el tradicional `README.md`).
+[Markdown](https://es.wikipedia.org/wiki/Markdown) is a markup language
+very popular among developers. It's used in many platforms that
+handle plain text (GitHub, forums, blogs, ...) and it's very common to
+find multiple files in that format in any kind of repository
+(starting with the traditional `README.md`).
 
-Estos archivos `Markdown` normalmente contienen _links_ (vínculos/ligas) que
-muchas veces están rotos o ya no son válidos y eso perjudica mucho el valor de
-la información que se quiere compartir.
+These `Markdown` files usually contain _links_ that
+many times are broken or are no longer valid. This greatly damages the value of
+the information you want to share.
 
-## 2. Resumen del proyecto
+## 2. Project Summary
 
-Se creó una librería en JavaScript que lee archivos en formato Markdown,
-a partir de lo cual puede verificar, meditante peticiones HTTP, 
-los links contenidos en estos archivos y repotar 
-información relevante acerca de los mismos, por ejemplo, 
-el total de links y si estos son válidos, están repetidos o rotos.
+I developed a JavaScript library that reads files in Markdown format,
+from which it can be verified, through HTTP requests,
+if the links contained in these files are valid and report
+relevant information about them, for example,
+the total number of links and if they'r repeated or broken.
 
-Esta API emplea como dependencias: 
+This API uses as dependencies:
 
 * [Axios](https://www.npmjs.com/package/axios)
 * [Cheerio](https://www.npmjs.com/package/cheerio)
 * [Marked](https://www.npmjs.com/package/marked)
 
-Para la ejecución de esta libreria, denominada mdLinks, también se creó una
-herramienta de línea de comando (CLI), que acepta por argumentos las 
-opciones de validar y/o obtener estadísticas de los links en cuestión.
+For the execution of this library, called mdLinks, I developed a
+command line tool (CLI), which accepts as arguments the
+options to validate and/or obtain statistics of the links in question.
 
-Para el CLI se usan las dependencias:
+For the CLI the dependencies are used:
 
 * [Colors](https://www.npmjs.com/package/colors)
 * [Yargs](https://www.npmjs.com/package/yargs)
 
-## 3. Planificación
+## 3. Planning
 
-Como punto de partida para el desarrollo de este proyecto, se itero sobre
-un [diagrama de flujo](https://whimsical.com/mdlinks-flowchart-GTqMzobjxnmCcLD28m5SHQ)
- que fue creado contemplando los elementos mínimos
-necesarios a cubrir por la API.
+As a starting point for the development of this project, I iterated on
+a [flowchart](https://whimsical.com/mdlinks-flowchart-GTqMzobjxnmCcLD28m5SHQ)
+that was created contemplating the minimum elements
+necessary to cover by the API.
 
-![MdLinks Diagrama de Flujo](./images_readme/mdLinks_flowChart.png)
+![MdLinks Flowchart](./images_readme/mdLinks_flowChart.png)
 
-## 4. Instalación
+## 4. Installation
 
-`npm i md-links-gchm` y configura un alias para la ejecución del cli
+`npm i md-links-gchm` and configure an alias for the cli execution
 
-o bien   
+or
 
-`npm i -D md-links-gchm` y después ejecuta con  `npx mdlinks [options]`
+`npm i -D md-links-gchm` and then run with `npx mdlinks [options]`
 
-Mientras que para importar el módulo con CommonJS Modules usa `require/module.exports`.
+Whereas to import the module with CommonJS Modules use `require/module.exports`.
 
-## 5. Implementación
+## 5. User Manual
 
-La librería mdLinks se ejecuta y recibe argumentos desde la linea de comando
-(CLI):  _mdLinks_ _path_ _options_
+The mdLinks library is executed and receives arguments from the command line
+(CLI): _mdLinks_ _path_ _options_
 
-El argumento path hace referencia a la ruta del _archivo markdown_ o 
-_directorio que contiene archivos markdown_, _este argumento es obligatorio._ 
+The path argument refers to the path of the _markdown_ file or the
+_directory containing markdown files_, _this argument is required._
 
-Mientras que options hace referencia, como su nombre lo
-indica, a los argumentos opcionales de validación y/o estadísticas de 
-los links contenidos en el archivo markdown.
+While options refers to the optional arguments of validation and/or statistics of
+the links contained in the markdown.
 
 * _mdLinks_ _path_ _--validate_
 * _mdLinks_ _path_ _--stats_
 * _mdLinks_ _path_ _--validate --stats_
 
-Como un elemento de apoyo, se incluyo como argumento _--help_ en la
-línea de comando. Si se usa se despliega un resumen de la forma del objetivo
-y forma de uso de la libreria (_mdLinks_ _path_ _--help_).
+As a support element, I included as an argument _--help_ in the
+command line. If used, a summary of how to use the library  is displayed (_mdLinks_ _path_ _--help_).
 
-A continuación algunos ejemplos de la visualización de estas diferentes
-opciones:
+Here are some examples of the visualization of these different
+options:
 
 ### mdLinks path !options 
 
@@ -108,10 +106,10 @@ opciones:
 
 ![mdLinks --help](./images_readme/mdLinks_h.png)
 
-## 6. Test Unitarios
+## 6. Unit Tests
 
-Con la finalidad de verificar el correcto funcionamientode la API y procurar 
-su optimización, se desarrollaron e implementaron test unitarios 
-de las diferentes funciones que componen a la librería.
+In order to verify the correct functioning of the API and to procure
+its optimization, unit tests were developed and implemented
+of the different functions that make up the library.
 
-![mdLinks test unitarios](./images_readme/mdLinks_tests.png)
+![mdLinks Unit Tests](./images_readme/mdLinks_tests.png)
