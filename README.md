@@ -1,6 +1,6 @@
 # Markdown Links
 
-## Índice
+## Index
 
 * [1. Preamble](#1-preamble)
 * [2. Project Summary](#2-project-summary)
